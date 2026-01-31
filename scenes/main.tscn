@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8fcpw04fufve"]
+
+[ext_resource type="PackedScene" uid="uid://dqm0j7kl5h572" path="res://scenes/cro.tscn" id="1_o5qli"]
+
+[node name="main" type="Node2D"]
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -85.0
+offset_top = -64.0
+offset_right = 848.0
+offset_bottom = 836.0
+color = Color(1, 0.972549, 0.87058824, 1)
+metadata/_edit_lock_ = true
+
+[node name="cro" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="cro2" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(244, 138)
+
+[node name="cro3" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(155, 299)
+
+[node name="cro4" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(470, 368)
+
+[node name="cro5" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(151, 517)
+
+[node name="cro6" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(502, 602)
+
+[node name="cro7" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(314, 68)
+
+[node name="cro8" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(558, 206)
+
+[node name="cro9" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(469, 367)
+
+[node name="cro10" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(784, 436)
+
+[node name="cro11" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(465, 585)
+
+[node name="cro12" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(816, 670)
+
+[node name="cro13" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(71, 99)
+
+[node name="cro14" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(315, 237)
+
+[node name="cro15" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(226, 398)
+
+[node name="cro16" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(541, 467)
+
+[node name="cro17" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(222, 616)
+
+[node name="cro18" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(573, 701)

@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://dqm0j7kl5h572"]
+
+[ext_resource type="Script" uid="uid://b1gooixwkj6q0" path="res://scripts/cro.gd" id="1_uqs13"]
+[ext_resource type="Texture2D" uid="uid://ifrhl6ervcsm" path="res://assets/Cat-Sheet.png" id="2_tubh6"]
+[ext_resource type="Texture2D" uid="uid://b1d2nuls1c5xr" path="res://assets/Penguin-Sheet.png" id="3_qdt2u"]
+[ext_resource type="Texture2D" uid="uid://81qkpb7njnv1" path="res://assets/Racoon-Sheet.png" id="4_etcui"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdt2u"]
+radius = 21.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tubh6"]
+atlas = ExtResource("2_tubh6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aacd2"]
+atlas = ExtResource("2_tubh6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdt2u"]
+atlas = ExtResource("2_tubh6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etcui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tubh6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aacd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdt2u")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etcui"]
+atlas = ExtResource("3_qdt2u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd58o"]
+atlas = ExtResource("3_qdt2u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8skmc"]
+atlas = ExtResource("3_qdt2u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2q28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etcui")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd58o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8skmc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2q28"]
+atlas = ExtResource("4_etcui")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvo28"]
+atlas = ExtResource("4_etcui")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb81b"]
+atlas = ExtResource("4_etcui")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12wv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2q28")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvo28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb81b")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qdt2u"]
+resource_name = "idle"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etcui"]
+_data = {
+&"idle": SubResource("Animation_qdt2u")
+}
+
+[node name="cro" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_uqs13")
+speed = 150
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qdt2u")
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="cat" type="AnimatedSprite2D" parent="sprites"]
+visible = false
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_etcui")
+animation = &"run"
+
+[node name="penguin" type="AnimatedSprite2D" parent="sprites"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_h2q28")
+animation = &"run"
+frame_progress = 0.20479257
+
+[node name="racoon" type="AnimatedSprite2D" parent="sprites"]
+visible = false
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_12wv6")
+animation = &"idle"
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_etcui")
+}

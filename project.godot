@@ -11,5 +11,16 @@ config_version=5
 [application]
 
 config/name="pijonyahu"
+run/main_scene="uid://c8fcpw04fufve"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=768
+window/size/viewport_height=768
+window/size/always_on_top=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
